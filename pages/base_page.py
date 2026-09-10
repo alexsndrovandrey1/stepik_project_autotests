@@ -73,3 +73,9 @@ class BasePage:
             *BasePageLocators.BASKET_LINK
         )
         link.click()
+    
+    def should_be_authorized_user(self):
+        assert self.is_element_present(
+            *BasePageLocators.USER_ICON
+        ), "Пользователь не авторизован"
+        
