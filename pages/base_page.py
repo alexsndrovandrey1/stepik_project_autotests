@@ -78,4 +78,8 @@ class BasePage:
         assert self.is_element_present(
             *BasePageLocators.USER_ICON
         ), "Пользователь не авторизован"
-        
+
+    def should_be_login_page(self):
+        assert "login" in self.browser.current_url, (
+            "Не удалось перейти на страницу логина"
+        )
