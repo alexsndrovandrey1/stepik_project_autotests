@@ -42,3 +42,13 @@ class ProductPage(BasePage):
             *ProductPageLocators.PRODUCT_PRICE
         ).text
         
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(
+            *ProductPageLocators.SUCCESS_MESSAGE
+        ), "Сообщение об успешном добавлении присутствует, хотя его не должно быть"
+
+
+    def should_be_success_message_disappeared(self):
+        assert self.is_disappeared(
+            *ProductPageLocators.SUCCESS_MESSAGE
+        ), "Сообщение об успешном добавлении не исчезло"
